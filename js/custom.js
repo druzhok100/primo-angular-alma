@@ -3,6 +3,9 @@
 'use strict';
 
 var access_token = '0fd99ee37b132dd219ef0510cf7c04598f085daf';
+// These functions are HEAVILY based on Michael Doran's (UT Arlington) sortLC. 
+// I really just translated his Perl into JavaScript.
+
 function normalizeLC(callNumber) {
     // remove initial whitespace
     var cn = callNumber.replace(/^\s*/, '');
@@ -131,6 +134,7 @@ app.controller('prmCopyClipboardBtnAfterController', [function () {
 
         if (long_url !== 'undefined') {
 
+            // access_token is defined externally
             var requestUrl = "https://api-ssl.bitly.com/v3/shorten?callback=?&format=json&access_token=" + access_token + "&login=iclibrary&longUrl=" + long_url;
 
             ajax_promise(requestUrl).then(function (result) {

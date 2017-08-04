@@ -1,3 +1,6 @@
+// These functions are HEAVILY based on Michael Doran's (UT Arlington) sortLC. 
+// I really just translated his Perl into JavaScript.
+
 function normalizeLC(callNumber) {
         // remove initial whitespace
         var cn = callNumber.replace(/^\s*/, '');

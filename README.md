@@ -16,6 +16,11 @@ You'll see many lines in the custom JS in this repository that look something li
 Lines like these may need to be modified to match the data structure provided by your ILS. If you try to implement this code and see problems, `console.log` the variable and see if it contains what you think it should. If not, you'll probably need to modify the data path. To find the right path, `console.log(this);` within the directive that you're working on. This will log an object to the console and you can drill down through that to find the value you need.
 
 
+## Acknowledgements
+
+
+
+
 ## The Customizations
 
 ### Icons for Material Types
@@ -52,4 +57,6 @@ This feature uses the [Bitly API](https://dev.bitly.com/) to create short bitlin
 
 ### Stack Maps
 
-This is by far the most complex of the customizations. The code relating to the maps is anything but plug-and-play. Some of the details and challenges of implementing a stack map system in Primo are addressed [here](http://rgilmour70.github.io/stackMaps/).
+This is by far the most complex of the customizations. The code relating to the maps is anything but plug-and-play. Some of the details and challenges of implementing a stack map system in Primo are addressed [here](http://rgilmour70.github.io/stackMaps/). The functions for manipulating LC call numbers in `js/call_number_functions.js` are JavaScript translations of [sortLC](https://rocky.uta.edu/doran/sortlc/) by @michaeldoran. These functions depend on [sprintf-js](https://www.npmjs.com/package/sprintf-js).
+
+
