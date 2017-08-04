@@ -18,7 +18,7 @@ Lines like these may need to be modified to match the data structure provided by
 
 ## Acknowledgements
 
-
+Much of the code here was inspired by, if not copied outright from posts to PRIMO-DISCUSS-L and the IGeLU/ELUNA SIWG Slack channel, both from Ex Libris developers and from my fellow librarians. As noted below, material type icons were designed by @dtaylor4444. Thanks to @michaeldoran for the LC call number sorting functions, @alexei for `sprintf.js`, and Abby Juda (Science Librarian, Ithaca College) for many contributions to the code.
 
 
 ## The Customizations
@@ -57,6 +57,6 @@ This feature uses the [Bitly API](https://dev.bitly.com/) to create short bitlin
 
 ### Stack Maps
 
-This is by far the most complex of the customizations. The code relating to the maps is anything but plug-and-play. Some of the details and challenges of implementing a stack map system in Primo are addressed [here](http://rgilmour70.github.io/stackMaps/). The functions for manipulating LC call numbers in `js/call_number_functions.js` are JavaScript translations of [sortLC](https://rocky.uta.edu/doran/sortlc/) by @michaeldoran. These functions depend on [sprintf-js](https://www.npmjs.com/package/sprintf-js).
+This is by far the most complex of the customizations. The code relating to the maps is anything but plug-and-play. Some of the details and challenges of implementing a stack map system in Primo are addressed [here](http://rgilmour70.github.io/stackMaps/). The functions for manipulating LC call numbers in `js/call_number_functions.js` are JavaScript translations of [sortLC](https://rocky.uta.edu/doran/sortlc/) by @michaeldoran. These functions in turn depend on [sprintf-js](https://github.com/alexei/sprintf.js) by @alexei.
 
 
