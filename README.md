@@ -1,13 +1,13 @@
-This repository contains the front-end customization code for [Ithaca College Library][https://library.ithaca.edu]'s hosted Ex Libris Primo implementation.
+This repository contains the front-end customization code for [Ithaca College Library](https://library.ithaca.edu)'s hosted Ex Libris Primo implementation.
 
-The code herein assumes that you are using the [primo-explore-devenv][https://github.com/ExLibrisGroup/primo-explore-devenv] from @ExLibrisGroup.
+The code herein assumes that you are using the [primo-explore-devenv](https://github.com/ExLibrisGroup/primo-explore-devenv) from @ExLibrisGroup.
 
-Our main point of entry for Primo (which we brand locally as "Argos") is a search box on the [library home page][https://library.ithaca.edu]. The code for the search box is [available on CodePen][https://codepen.io/rgilmour/pen/PKNgWV].
+Our main point of entry for Primo (which we brand locally as "Argos") is a search box on the [library home page](https://library.ithaca.edu). The code for the search box is [available on CodePen](https://codepen.io/rgilmour/pen/PKNgWV).
 
 
 ## On Back-End Compatibility
 
-Ithaca College Library is in the process of migrating Ex Libris Alma as our ILS. If you are using Voyager, you may find [this repository][https://github.com/rgilmour70/primo-new-ui-custom] more useful. It contains IC's customizations from our time on Voyager.
+Ithaca College Library is in the process of migrating Ex Libris Alma as our ILS. If you are using Voyager, you may find [this repository](https://github.com/rgilmour70/primo-new-ui-custom) more useful. It contains IC's customizations from our time on Voyager.
 
 You'll see many lines in the custom JS in this repository that look something like this:
 
@@ -20,7 +20,7 @@ Lines like these may need to be modified to match the data structure provided by
 
 ### Icons for Material Types
 
-The material type icons included in the img directory were designed by @dtaylor4444.  His [PrimoIcons][https://github.com/dtaylor4444/PrimoIcons] repository includes an AI file for the icons as well as the pngs included here.
+The material type icons included in the img directory were designed by @dtaylor4444.  His [PrimoIcons](https://github.com/dtaylor4444/PrimoIcons) repository includes an AI file for the icons as well as the pngs included here.
 
 
 ### Make the Logo a Link
@@ -45,11 +45,11 @@ This is the third and final customization implemented on the `prmSearchResultAva
 
 ### Bitly Permalinks
 
-This feature uses the [Bitly API][https://dev.bitly.com/] to create short bitlinks, which are displayed instead of the default, very long, permalinks. It uses the `prmCopyClipboardBtnAfter` directive. To use this feature, you will need to register with Bitly and get an access token. Once you have your access token, you can either add it directly into the `get_bitlink()` function or put it in a separate JS file as follows:
+This feature uses the [Bitly API](https://dev.bitly.com/) to create short bitlinks, which are displayed instead of the default, very long, permalinks. It uses the `prmCopyClipboardBtnAfter` directive. To use this feature, you will need to register with Bitly and get an access token. Once you have your access token, you can either add it directly into the `get_bitlink()` function or put it in a separate JS file as follows:
 
 ```const access_token = your_access_token_goes_here;```
 
 
 ### Stack Maps
 
-This is by far the most complex of the customizations. The code relating to the maps is anything but plug-and-play. Some of the details and challenges of implementing a stack map system in Primo are addressed [here][http://rgilmour70.github.io/stackMaps/].
+This is by far the most complex of the customizations. The code relating to the maps is anything but plug-and-play. Some of the details and challenges of implementing a stack map system in Primo are addressed [here](http://rgilmour70.github.io/stackMaps/).
