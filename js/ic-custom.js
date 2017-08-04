@@ -58,6 +58,7 @@ app.controller('prmCopyClipboardBtnAfterController', [function() {
         
         if (long_url !== 'undefined') {
            
+            // access_token is defined externally
             var requestUrl = "https://api-ssl.bitly.com/v3/shorten?callback=?&format=json&access_token=" + access_token + "&login=iclibrary&longUrl=" + long_url;
 
             ajax_promise(requestUrl).then(function(result) {
