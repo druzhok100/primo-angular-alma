@@ -59,7 +59,6 @@ prm-brief-result-container {
 
 /* Hide Tabs for RefWorks, EndNote, EasyBib */
 
-prm-action-list li[name="BibTeXPushTo"],
 prm-action-list li[name="RefWorks"],
 prm-action-list li[name="EndNote"],
 prm-action-list li[name="EasyBib"] {
