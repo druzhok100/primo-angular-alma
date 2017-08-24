@@ -787,15 +787,16 @@ prm-facet-group strong {
 this view from our live one until we go live */
 
 prm-search-bar {
-	/*background-color: #013158;*/
-	background-color: lime;
+	background-color: #013158;
+	/*background-color: lime;*/
 }
 prm-browse-search-bar {
-	/*background-color: #013158;*/
-	background-color: lime;
+	background-color: #013158;
+	/*background-color: lime;*/
 }
 .advanced-search-backdrop {
-	background-color: lime;
+	background-color: #013158;
+	/*background-color: lime;*/
 }
 
 .available-facets {
@@ -856,7 +857,15 @@ prm-copy-clipboard-btn > button {
 	text-align: center;
 }
 
+/* Image isn't clickable, so don't show a pointer. */
 prm-full-view-service-container .media-thumbnail > a {
 	cursor: default;
 }
+
+/* Make the floating select boxes appear *inside* the facets box */ 
+prm-facet-group .md-chips > .md-chip {
+	margin-left: 1.2em;
+}
+
+
 

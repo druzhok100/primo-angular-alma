@@ -86,7 +86,7 @@ app.component('prmCopyClipboardBtnAfter', {
 
 app.controller('mapController', [function() {
 
-	// console.log(this);
+	console.log(this);
 
 	function drawIndicator(mapHeight, mapWidth, x, y, h, w) {
 		// not sure why, but works best if we draw on ALL the possible canvases
@@ -160,7 +160,7 @@ app.controller('mapController', [function() {
     // availability
     try {
         this.availability = this.parentCtrl.item.delivery.bestlocation.availabilityStatus;
-        // console.log(this.availability);
+        console.log("availability: " + this.availability);
     } catch(e) {
         this.availability = "";
     }
@@ -259,13 +259,15 @@ app.controller('mapController', [function() {
 
     			if (this.holdingsLocations[i] !== this.location) {
     				var hl = this.holdingsLocations[i];
-    				console.log(hl);
-    				this.locMessage += staticLocations[hl].english || hl;
-    				if (i === this.holdingsLocations.length - 1) {
-    					this.locMessage += ".";
-    				} else {
-    					this.locMessage += ", ";
-    				}
+    				// console.log("hl: " + hl);
+
+                    this.locMessage += staticLocations[hl].english || hl;
+                    if (i === this.holdingsLocations.length - 1) {
+                        this.locMessage += ".";
+                    } else {
+                        this.locMessage += ", ";
+                    }
+
     			}
     		}
 
@@ -300,18 +302,39 @@ app.component('prmFullViewServiceContainerAfter', {
 // Also replaces the access link in the item view
 app.controller('prmSearchResultAvailabilityLineAfterController', [function() {
 
+    // console.log(this);
+
     // what is it?
     try {
         this.category = this.parentCtrl.result.delivery.GetIt1[0].category;
     } catch(e) {
         this.category = "";
     }
+    console.log("category: " + this.category);
+
+    // no, really, what is it?
+    try {
+        this.format = this.parentCtrl.result.pnx.display.type[0];
+    } catch(e) {
+        this.format = "";
+    }
+    console.log("format: " + this.format);
 
     // translate category type to display text
-    if (this.category === "Online Resource") {
+    if ( this.category === "Online Resource" || this.category === "Alma-E" ) {
         this.quickUrlText = "Online access";
     } else if (this.category === "Remote Search Resource") {
-        this.quickUrlText = "Full text available";
+
+        if ( this.format === "image" || this.format === "video" || this.format === "map") {
+            this.quickUrlText = "View online";
+        } else if ( this.format === "website" ) {
+            this.quickUrlText = "Online access";
+        } else if ( this.format === "audio" ) {
+            this.quickUrlText = "Listen online";
+        } else {
+            this.quickUrlText = "Full text available";
+        }
+
     } else { // this default should help me spot any weird cases
         this.quickUrlText = "LINK";
     }
@@ -375,7 +398,7 @@ app.controller('prmSearchResultAvailabilityLineAfterController', [function() {
         this.sourceSystem = "";
     }
 
-    this.showNotOnShelfLink = Boolean(this.category === "Alma-P" && this.location !== "multimedia");
+    this.showNotOnShelfLink = Boolean(this.category === "Alma-P" && this.location !== "multimedia" && this.location != "reserves");
 
 }]);
 
@@ -384,4 +407,3 @@ app.component('prmSearchResultAvailabilityLineAfter', {
 	controller: 'prmSearchResultAvailabilityLineAfterController',
 	template: '<div class="ic-access-link-area" ng-show="$ctrl.online"><prm-icon icon-definition="link" icon-type="svg" svg-icon-set="primo-ui"></prm-icon><a href="{{$ctrl.quickUrl}}" target="_blank">{{$ctrl.quickUrlText}}</a>&nbsp;<prm-icon icon-definition="open-in-new" icon-type="svg" svg-icon-set="primo-ui"></prm-icon><prm-icon icon-definition="chevron-right" icon-type="svg" svg-icon-set="primo-ui"></prm-icon></div><div class="ic-links-area"><a ng-href="https://library.ithaca.edu/services/sms_me_alma.php?title={{$ctrl.title | encode}}&cn={{$ctrl.callNumber | encode}}&loc={{$ctrl.location | encode}}&rid={{$ctrl.recordId | encode}}" class="ic-sms-link">Text this item</a>&nbsp;&nbsp;&nbsp;<a ng-href="https://library.ithaca.edu/forms/traceform.php?title={{$ctrl.title | encode}}&author={{$ctrl.author | encode}}&cn={{$ctrl.callNumber | encode}}" class="ic-trace-link" ng-show="$ctrl.showNotOnShelfLink">Not on shelf?</a></div>'
 });
-

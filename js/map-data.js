@@ -17,7 +17,10 @@ var staticLocations = {
       "musicfolio": { "floor":"3","x":413,"y":292,"width":10,"height":23, "message":"This item is located near the Music Reference Desk in the NW corner of the third floor.", "english":"Music Folio"},
       "oversize": { "floor":"5","x":303,"y":139,"width":40,"height":82, "message":"This item is located in the central area of the fifth floor, near the archives.", "english":"Oversize"},
       "folio": { "floor":"5","x":329,"y":187,"width":14,"height":36, "message":"This item is located in the central area of the fifth floor, near the archives.", "english":"Folio"},
-      "ebook": { "english":"Ebooks"}
+      "reserves": { "floor":"2","x":100,"y":91,"width":123,"height":38, "message":"Ask for this item at the Circulation/Reserves desk on the second floor.", "english":"Circulation Desk" },
+      "sheetmusic" : { "floor":"3","x":462,"y":271,"width":79,"height":60, "message":"Ask for this item at the Music desk on the third floor.", "english": "Sheet Music Collection" },
+      "ebook": { "english":"Ebooks"},
+      "periodical": { "english":"periodicals"}
 };
 
 var stacks = [
