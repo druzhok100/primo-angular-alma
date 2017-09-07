@@ -269,8 +269,5 @@ prm-facet-group .md-chips > .md-chip {
 	margin-left: 1.2em;
 }
 
-/* Hide "Ithaca College Library" in the location area */
-.best-location-library-code.locations-link {
-    display: none !important;
-}
+
 
