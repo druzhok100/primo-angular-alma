@@ -1,4 +1,5 @@
 # ignore bitly.js, which contains IC's access token
 js/bitly.js
+js/custom.js
 *.DS_Store
 

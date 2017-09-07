@@ -37,16 +37,16 @@ app.controller('prmCopyClipboardBtnAfterController', [function() {
             xhr.onload = function() {
                 if (xhr.readyState === 4){
                     if (xhr.status === 200){
-                        //console.log("xhr done successfully");
+                        console.log("xhr done successfully");
                         var resp = xhr.responseText;
                         var respJson = JSON.parse(resp);
                         resolve(respJson);
                     } else {
                         reject(xhr.status);
-                        //console.log("xhr failed");
+                        console.log("xhr failed");
                     }
                 } else {
-                    //console.log("xhr processing going on");
+                    console.log("xhr processing going on");
                 }
             };
         });
@@ -62,10 +62,17 @@ app.controller('prmCopyClipboardBtnAfterController', [function() {
             var requestUrl = "https://api-ssl.bitly.com/v3/shorten?callback=?&format=json&access_token=" + access_token + "&login=iclibrary&longUrl=" + long_url;
 
             ajax_promise(requestUrl).then(function(result) {
-                vm.bitlink = result.data.url;
-                var theLink = document.getElementById("ic-bitly");
-                theLink.innerHTML = vm.bitlink;
-                theLink.href = vm.bitlink;
+                if (result.data.url !== undefined) {
+                    vm.bitlink = result.data.url;
+                    var theLink = document.getElementById("ic-bitly");
+                    theLink.innerHTML = vm.bitlink;
+                    theLink.href = vm.bitlink;
+                } else {
+                    vm.bitlink = decodeURIComponent(long_url); // not really a bitlink
+                    var theLink = document.getElementById("ic-bitly");
+                    theLink.innerHTML = vm.bitlink;
+                    theLink.href = vm.bitlink;
+                }
             }).catch(function(e) {
                 console.log("Ajax Problem: " + e);
             });
