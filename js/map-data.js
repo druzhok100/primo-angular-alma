@@ -4,7 +4,7 @@ var staticLocations = {
       "newbooks": { "floor":"2","x":132,"y":166,"width":101,"height":13, "message":"This item is located on the low shelves just inside the main entrance, on the side facing the Research Help desk.", "english":"New Books" },
       "newspaper": { "floor":"2","x":264,"y":131,"width":55,"height":73, "message":"This item is located on the low shelves on either side of the main staircase on the second floor.", "english":"Newspapers" },
       "circdesk": { "floor":"2","x":100,"y":91,"width":123,"height":38, "message":"Ask for this item at the Circulation/Reserves desk on the second floor.", "english":"Circulation Desk" },
-      "refdesk": { "floor":"2","x":128,"y":236,"width":110,"height":57, "message":"Ask for this item at the Research Help desk on the second floor.", "english":"Research Help Desk"},
+      "refdesk": { "floor":"2","x":128,"y":236,"width":110,"height":57, "message":"Ask for this item at the Research Help desk on the second floor.", "english":"Reference Desk"},
       "popper": { "floor":"2","x":323,"y":135,"width":22,"height":67, "message":"This item is located on the low shelves near the center of the second floor.", "english":"Popular Periodicals" },
       "archives": { "floor":"5","x":338,"y":139,"width":188,"height":83, "message":"This item is located in the archives on the fifth floor. Contact Bridget Bower (bbower@ithaca.edu) for access.", "english":"Archives" },
       "serling": { "floor":"5","x":338,"y":139,"width":188,"height":83, "message":"This item is located in the archives on the fifth floor. Contact Bridget Bower (bbower@ithaca.edu) for access.", "english":"Archives" },
@@ -19,7 +19,8 @@ var staticLocations = {
       "folio": { "floor":"5","x":329,"y":187,"width":14,"height":36, "message":"This item is located in the central area of the fifth floor, near the archives.", "english":"Folio"},
       "reserves": { "floor":"2","x":100,"y":91,"width":123,"height":38, "message":"Ask for this item at the Circulation/Reserves desk on the second floor.", "english":"Circulation Desk" },
       "sheetmusic" : { "floor":"3","x":462,"y":271,"width":79,"height":60, "message":"Ask for this item at the Music desk on the third floor.", "english": "Sheet Music Collection" },
-      "ebook": { "english":"Ebooks"}
+      "ebook": { "english":"Ebooks"},
+      "periodical": { "english":"periodicals"}
 };
 
 var stacks = [

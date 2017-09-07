@@ -152,7 +152,7 @@ app.controller('mapController', [function() {
     // location
     try {
         this.location = this.parentCtrl.item.delivery.bestlocation.subLocationCode;
-        //console.log("location: " + this.location);
+        // console.log(this.location);
     } catch(e) {
         this.location = "";
     }
@@ -160,7 +160,7 @@ app.controller('mapController', [function() {
     // availability
     try {
         this.availability = this.parentCtrl.item.delivery.bestlocation.availabilityStatus;
-        //console.log("availability: " + this.availability);
+        console.log("availability: " + this.availability);
     } catch(e) {
         this.availability = "";
     }
@@ -259,16 +259,9 @@ app.controller('mapController', [function() {
 
     			if (this.holdingsLocations[i] !== this.location) {
     				var hl = this.holdingsLocations[i];
-    				console.log("hl: " + hl);
-                    this.staticLocations = "";
+    				// console.log("hl: " + hl);
 
-                    if (staticLocations[hl]) {
-                        this.locMessage += staticLocations[hl].english;
-                    } else {
-                        this.locMessage += hl; // cases where secondary loc isn't static
-                    }
-
-                    // this.locMessage += staticLocations[hl].english;
+                    this.locMessage += staticLocations[hl].english || hl;
                     if (i === this.holdingsLocations.length - 1) {
                         this.locMessage += ".";
                     } else {
@@ -317,7 +310,7 @@ app.controller('prmSearchResultAvailabilityLineAfterController', [function() {
     } catch(e) {
         this.category = "";
     }
-    //console.log("category: " + this.category);
+    console.log("category: " + this.category);
 
     // no, really, what is it?
     try {
@@ -325,7 +318,7 @@ app.controller('prmSearchResultAvailabilityLineAfterController', [function() {
     } catch(e) {
         this.format = "";
     }
-    //console.log("format: " + this.format);
+    console.log("format: " + this.format);
 
     // translate category type to display text
     if ( this.category === "Online Resource" || this.category === "Alma-E" ) {
