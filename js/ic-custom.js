@@ -4,6 +4,25 @@ app.filter('encode', function() {
 	return encodeURIComponent;
 });
 
+// Clear sticky facets on new search
+// Modified from Mike Schaaf (U of Otago) on PRIMO list
+app.controller('prmExploreMainAfterController', function($scope) {
+    var newSearchURL = 'https://ithaca-primo.hosted.exlibrisgroup.com/primo-explore/search?vid=01ITHACACOL_V1&lang=en_US';
+    var newSearchURLlocal = 'http://localhost:8003/primo-explore/search?vid=01ITHACACOL_V1&lang=en_US';
+    console.log(window.location.href);
+    if (window.location.href == newSearchURL || window.location.href == newSearchURLlocal) {
+        var stickyFacets = $scope.$parent.$ctrl.searchService.facetService.getStickyFacets();
+        for (var i = 0; i < stickyFacets.length; i++) {
+            $scope.$parent.$ctrl.searchService.facetService.removeStickyFacet(stickyFacets[i]);
+        }
+    }
+});
+ 
+app.component('prmExploreMainAfter', {
+    bindings: { parentCtrl: '<' },
+    controller: 'prmExploreMainAfterController'
+});
+
 
 // Bitly permalink
 app.controller('prmCopyClipboardBtnAfterController', [function() {
