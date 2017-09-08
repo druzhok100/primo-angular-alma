@@ -1,6 +1,6 @@
 var staticLocations = {
-      "mcnaughton": { "floor":"2","x":131,"y":156,"width":103,"height":11, "message":"This item is located on the low shelves just inside the main entrance, on the side facing the Circulation/Reserves desk.", "english":"Popular Reading" },
-      "mcnaud": { "floor":"2","x":131,"y":156,"width":103,"height":11, "message":"This item is located on the low shelves just inside the main entrance, on the side facing the Circulation/Reserves desk.", "english":"Popular Reading" },
+      "leasedbook": { "floor":"2","x":131,"y":156,"width":103,"height":11, "message":"This item is located on the low shelves just inside the main entrance, on the side facing the Circulation/Reserves desk.", "english":"Popular Reading" },
+      "leasedaud": { "floor":"2","x":131,"y":156,"width":103,"height":11, "message":"This item is located on the low shelves just inside the main entrance, on the side facing the Circulation/Reserves desk.", "english":"Audio Books" },
       "newbooks": { "floor":"2","x":132,"y":166,"width":101,"height":13, "message":"This item is located on the low shelves just inside the main entrance, on the side facing the Research Help desk.", "english":"New Books" },
       "newspaper": { "floor":"2","x":264,"y":131,"width":55,"height":73, "message":"This item is located on the low shelves on either side of the main staircase on the second floor.", "english":"Newspapers" },
       "circdesk": { "floor":"2","x":100,"y":91,"width":123,"height":38, "message":"Ask for this item at the Circulation/Reserves desk on the second floor.", "english":"Circulation Desk" },
@@ -10,6 +10,8 @@ var staticLocations = {
       "serling": { "floor":"5","x":338,"y":139,"width":188,"height":83, "message":"This item is located in the archives on the fifth floor. Contact Bridget Bower (bbower@ithaca.edu) for access.", "english":"Archives" },
       "reference": { "floor":"2","x":128,"y":236,"width":110,"height":57, "message":"This item is located in the reference stacks behind the Research Help desk on the second floor.", "english":"Reference" },
       "microfilm": { "floor":"4","x":483,"y":59,"width":39,"height":64, "message":"This item is located in the metal cases in the southwest corner of the fourth floor, near the restrooms.", "english":"Microfilm" },
+      "microcard": { "floor":"4","x":483,"y":59,"width":39,"height":64, "message":"This item is located in the metal cases in the southwest corner of the fourth floor, near the restrooms.", "english":"Microcard" },
+      "microfiche": { "floor":"4","x":483,"y":59,"width":39,"height":64, "message":"This item is located in the metal cases in the southwest corner of the fourth floor, near the restrooms.", "english":"Microfiche" },
       "musper": { "floor":"3","x":153,"y":228,"width":46,"height":86, "message":"This item is located in the northeast corner of the third floor, near the administrative offices.", "english":"Music Periodicals" },
       "multimedia": { "floor":"3","x":263,"y":95,"width":81,"height":39, "message":"Ask for this item at the Multimedia desk on the third floor.", "english":"Multimedia"},
       "musicref": { "floor":"3","x":433,"y":233,"width":18,"height":78, "message":"This item is located near the Music Reference Desk in the NW corner of the third floor.", "english":"Music Reference"},
@@ -19,7 +21,12 @@ var staticLocations = {
       "folio": { "floor":"5","x":329,"y":187,"width":14,"height":36, "message":"This item is located in the central area of the fifth floor, near the archives.", "english":"Folio"},
       "reserves": { "floor":"2","x":100,"y":91,"width":123,"height":38, "message":"Ask for this item at the Circulation/Reserves desk on the second floor.", "english":"Circulation Desk" },
       "sheetmusic" : { "floor":"3","x":462,"y":271,"width":79,"height":60, "message":"Ask for this item at the Music desk on the third floor.", "english": "Sheet Music Collection" },
-      "ebook": { "english":"Ebooks"}
+      "ebook": { "english":"Ebooks"},
+      "icebook": { "english": "Ebooks"},
+      "eaudio": { "english":"Digital Audio"},
+      "ejournal": { "english": "Online Journals"},
+      "escore": { "english": "Online Scores"},
+      "eresource" : { "english": "Online Resources"}
 };
 
 var stacks = [
