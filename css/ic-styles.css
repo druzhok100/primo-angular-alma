@@ -12,20 +12,22 @@ body.md-dialog-is-showing  {
 	outline: none;
 	box-shadow: none;
 }
-
+prm-logo .product-logo {
+	padding: 0 !important;
+}
 prm-search-result-list .pages-separated-with-gaps .results-title:not(.results-title-favorites) {
     padding-left: 100px;
 }
 
 /* Logo rules provided by Ex Libris and shared 
 by Sarah Johnston of St. Olaf College */
-prm-logo div.product-logo {
+/*prm-logo div.product-logo {
 	display: none;
 }
 
 prm-logo div.product-logo-local {
 	display: flex;
-}
+}*/
 
 
 md-list-item {

@@ -5,23 +5,6 @@ app.filter('encode', function() {
 });
 
 
-// Make the logo a link
-// Based on code provided by Ex Libris and 
-// shared by Sarah Johnston of St. Olaf College
-app.controller('prmLogoAfterController', [function() {
-	var vm = this;
-	vm.getIconLink = getIconLink;
-	function getIconLink() {
-		return vm.parentCtrl.iconLink;
-	}
-}]);
-app.component('prmLogoAfter', {
-	bindings: { parentCtrl: '<' },
-	controller: 'prmLogoAfterController',
-	template: '<div class="product-logo product-logo-local" layout="row" layout-align="start center" layout-fill id="banner"><a href="https://library.ithaca.edu/"><img class="logo-image" alt="Ithaca College Library" ng-src="{{$ctrl.getIconLink()}}"/></a></div>'
-});
-
-
 // Bitly permalink
 app.controller('prmCopyClipboardBtnAfterController', [function() {
 
@@ -93,7 +76,7 @@ app.component('prmCopyClipboardBtnAfter', {
 
 app.controller('mapController', [function() {
 
-	console.log(this);
+	// console.log(this);
 
 	function drawIndicator(mapHeight, mapWidth, x, y, h, w) {
 		// not sure why, but works best if we draw on ALL the possible canvases
