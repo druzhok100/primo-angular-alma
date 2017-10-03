@@ -153,7 +153,7 @@ app.controller('mapController', [function() {
         theCallNumber = theCallNumber.replace(/^[(\s]+/,"");
         theCallNumber = theCallNumber.replace(/[)\s]+$/,"");
         this.callNumber = theCallNumber;
-        // console.log(this.callNumber);
+        console.log("Call Number: |" + this.callNumber + "|");
     } catch(e) {
         this.callNumber = "";
     }
@@ -169,7 +169,7 @@ app.controller('mapController', [function() {
     // availability
     try {
         this.availability = this.parentCtrl.item.delivery.bestlocation.availabilityStatus;
-        //console.log("availability: " + this.availability);
+        // console.log("availability: " + this.availability);
     } catch(e) {
         this.availability = "";
     }
@@ -191,10 +191,11 @@ app.controller('mapController', [function() {
         this.mapHeight = 0.58666666667 * this.mapWidth;
 
         this.showLocMessage = true;
-    	this.showMap = true;
+    	this.showMap = false;
 
     	// is it in a static location?
     	for (var loc in staticLocations) {
+            this.showMap = true;
     		if (loc === this.location) {
     			this.locationType = "static";
     			this.floor = staticLocations[loc].floor;
@@ -234,28 +235,35 @@ app.controller('mapController', [function() {
                 // console.log(this.lookupArray[i].start);
                 var end = this.lookupArray[i].end;
                 var test = sortLC(start, end, this.callNumber);
-                // console.log(test);
-                if ( (test[1] === this.callNumber) || (test[0] === this.callNumber && test.length === 2) ) {
+                console.log(test);
+                // if ( (test[1] === this.callNumber) || (test.length === 2 && (test[0] === this.callNumber || test[1] === this.callNumber)) ) {
+                if ( normalizeLC(test[1]) === normalizeLC(this.callNumber) || test.length === 2) {
                     this.coordinates = this.lookupArray[i];
                 }
             }
 
-            // console.log(this.coordinates);
+            //console.log(this.coordinates);
+            if (this.coordinates) {
+                console.log(this.coordinates);
+                this.showMap = true;
+                this.floor = this.coordinates.id.split('.')[0];
+                this.stack = this.coordinates.id.split('.')[1];
+                this.side = this.coordinates.id.split('.')[2];
+                if (this.side === "e") {
+                    this.sideLong = "east";
+                } else {
+                    this.sideLong = "west";
+                }
+                this.locMessage = "This item is available at stack " + this.stack + ", " + this.sideLong + "  side.";
 
-            this.floor = this.coordinates.id.split('.')[0];
-            this.stack = this.coordinates.id.split('.')[1];
-            this.side = this.coordinates.id.split('.')[2];
-            if (this.side === "e") {
-                this.sideLong = "east";
+                this.x = this.coordinates.x;
+                this.y = this.coordinates.y;
+                this.width = this.coordinates.width;
+                this.height = this.coordinates.height;
             } else {
-                this.sideLong = "west";
+                console.log("Why do I have no coordinates?");
+                this.showMap = false;
             }
-            this.locMessage = "This item is available at stack " + this.stack + ", " + this.sideLong + "  side.";
-
-            this.x = this.coordinates.x;
-            this.y = this.coordinates.y;
-            this.width = this.coordinates.width;
-            this.height = this.coordinates.height;
 
     	}
 

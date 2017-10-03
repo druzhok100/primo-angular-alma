@@ -66,7 +66,7 @@ function normalizeLC(callNumber) {
         }
         var theKeys = Object.keys(callNumberArray);
         var sortedKeys = theKeys.sort();
-        for (var j = 0; j < sortedKeys.length; j++) {
+        for (let j = 0; j < sortedKeys.length; j++) {
             sortedList.push(callNumberArray[sortedKeys[j]]);
         }
         return sortedList;

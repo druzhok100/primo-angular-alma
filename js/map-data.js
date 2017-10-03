@@ -242,8 +242,8 @@ var perStacks = [
 
 var musicStacks = [
       {"id":"3.M3.w", "start":"M1 .A13 A4", "end":"M2 .R2384", "x":"403", "y":"231", "height":"84", "width":"10"},
-      {"id":"3.M3.e", "start":"M2 .R2386", "end":"M3 .H26", "x":"394", "y":"230", "height":"84", "width":"10"},
-      {"id":"3.M4.w", "start":"M3 .H262", "end":"M3 .S3912", "x":"384", "y":"230", "height":"84", "width":"10"},
+      {"id":"3.M3.e", "start":"M2 .R2386", "end":"M3 .H26 SER.2", "x":"394", "y":"230", "height":"84", "width":"10"},
+      {"id":"3.M4.w", "start":"M3 .H26 SER.3", "end":"M3 .S3912", "x":"384", "y":"230", "height":"84", "width":"10"},
       {"id":"3.M4.e", "start":"M3 .S392 1967", "end":"M23 .N53 T5", "x":"375", "y":"230", "height":"84", "width":"10"},
       {"id":"3.M5.w", "start":"M23 .N56", "end":"M557 .B42 S5 1980", "x":"365", "y":"230", "height":"84", "width":"10"},
       {"id":"3.M5.e", "start":"M557 .B44 O6", "end":"M1500 .B733 E7 1977", "x":"356", "y":"230", "height":"84", "width":"10"},
