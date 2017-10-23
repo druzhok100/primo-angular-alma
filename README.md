@@ -7,7 +7,7 @@ Our main point of entry for Primo (which we brand locally as "Argos") is a searc
 
 ## On Back-End Compatibility
 
-Ithaca College Library is in the process of migrating Ex Libris Alma as our ILS. If you are using Voyager, you may find [this repository](https://github.com/rgilmour70/primo-new-ui-custom) more useful. It contains IC's customizations from our time on Voyager.
+Ithaca College Library migrated to Ex Libris Alma as our ILS in August 2017. If you are using Voyager, you may find [this repository](https://github.com/rgilmour70/primo-new-ui-custom) more useful. It contains IC's customizations from our time on Voyager.
 
 You'll see many lines in the custom JS in this repository that look something like this:
 
@@ -18,7 +18,7 @@ Lines like these may need to be modified to match the data structure provided by
 
 ## Acknowledgements
 
-Much of the code here was inspired by, if not copied outright from posts to PRIMO-DISCUSS-L and the IGeLU/ELUNA SIWG Slack channel, both from Ex Libris developers and from my fellow librarians. As noted below, material type icons were designed by @dtaylor4444. Thanks to @michaeldoran for the LC call number sorting functions, @alexei for `sprintf.js`, and Abby Juda (Science Librarian, Ithaca College) for many contributions to the code.
+Much of the code here was inspired by, if not copied outright from posts to PRIMO-DISCUSS-L and the IGeLU/ELUNA SIWG Slack channel, both from Ex Libris developers and from my fellow librarians. Material type icons were designed by @dtaylor4444. Thanks to @michaeldoran for the LC call number sorting functions, @alexei for `sprintf.js`, and Abby Juda (Science Librarian, Ithaca College) for many contributions to the code.
 
 
 ## The Customizations
